@@ -58,3 +58,7 @@ type SceneItemTransform struct {
 	// "{String (optional)} `parentGroupName` Name of the item's parent (if this item belongs to a group)",
 	// "{Array<SceneItemTransform> (optional)} `groupChildren` List of children (if this item is a group)"
 }
+
+type ScenesCollection struct {
+	Name string `json:"sc-name"`
+}

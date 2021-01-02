@@ -111,7 +111,7 @@ type GetStreamingStatusResponse struct {
 	_response   `json:",squash"`
 }
 
-// StartStopStreamingRequest : Toggle streaming on or off.
+// StartStopStreamingRequest : Toggle streaming on or off (depending on the current stream state).
 //
 // Since obs-websocket version: 0.3.
 //
@@ -229,13 +229,13 @@ type StartStreamingRequest struct {
 	StreamSettingsKey string `json:"stream.settings.key"`
 	// Indicates whether authentication should be used when connecting to the streaming server.
 	// Required: No.
-	StreamSettingsUseAuth bool `json:"stream.settings.use-auth"`
+	StreamSettingsUseAuth bool `json:"stream.settings.use_auth"`
 	// If authentication is enabled, the username for the streaming server.
-	// Ignored if `use-auth` is not set to `true`.
+	// Ignored if `use_auth` is not set to `true`.
 	// Required: No.
 	StreamSettingsUsername string `json:"stream.settings.username"`
 	// If authentication is enabled, the password for the streaming server.
-	// Ignored if `use-auth` is not set to `true`.
+	// Ignored if `use_auth` is not set to `true`.
 	// Required: No.
 	StreamSettingsPassword string `json:"stream.settings.password"`
 	_request               `json:",squash"`
@@ -450,7 +450,7 @@ type SetStreamSettingsRequest struct {
 	SettingsKey string `json:"settings.key"`
 	// Indicates whether authentication should be used when connecting to the streaming server.
 	// Required: No.
-	SettingsUseAuth bool `json:"settings.use-auth"`
+	SettingsUseAuth bool `json:"settings.use_auth"`
 	// The username for the streaming service.
 	// Required: No.
 	SettingsUsername string `json:"settings.username"`
@@ -657,13 +657,13 @@ type GetStreamSettingsResponse struct {
 	SettingsKey string `json:"settings.key"`
 	// Indicates whether authentication should be used when connecting to the streaming server.
 	// Required: Yes.
-	SettingsUseAuth bool `json:"settings.use-auth"`
+	SettingsUseAuth bool `json:"settings.use_auth"`
 	// The username to use when accessing the streaming server.
-	// Only present if `use-auth` is `true`.
+	// Only present if `use_auth` is `true`.
 	// Required: Yes.
 	SettingsUsername string `json:"settings.username"`
 	// The password to use when accessing the streaming server.
-	// Only present if `use-auth` is `true`.
+	// Only present if `use_auth` is `true`.
 	// Required: Yes.
 	SettingsPassword string `json:"settings.password"`
 	_response        `json:",squash"`
@@ -757,7 +757,6 @@ type SaveStreamSettingsResponse struct {
 }
 
 // SendCaptionsRequest : Send the provided text as embedded CEA-608 caption data.
-// As of OBS Studio 23.1, captions are not yet available on Linux.
 //
 // Since obs-websocket version: 4.6.0.
 //
